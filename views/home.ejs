@@ -1,0 +1,30 @@
+<!-- This template is taken from https://www.w3schools.com/howto/howto_js_todolist.asp -->
+<html>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<body>
+    <div id="myDIV" class="header">
+        <h2>My To Do List</h2>
+        <form action="/item/add" method="get">
+        <input type="text" id="myInput" name="val" placeholder="Title...">
+        <button type="submit" class="addBtn">Add</button>
+        </form>
+      </div>
+      
+      <ul id="myUL">
+        <% if(todos.length >0) { %>
+            <% todos.forEach(todo=> { %>
+                <li><%= todo['name'] %></li>
+            
+              <% }) %>
+            <% } else {%>
+              <h3>No todos yet</h3>
+              <% } %>
+      </ul>
+</body>          
+  <script>
+      function newElement() {
+        var inputValue = document.getElementById("myInput").value;
+        fetch(`http://localhost:3000/item/add?val=${inputValue}`);
+      }
+      </script>
+</html>
