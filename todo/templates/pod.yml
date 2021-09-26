@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: todo
+  labels:
+    app: todo
+spec:
+  containers:
+  - name: todo
+    image: ahmedihab/todo
+    ports:
+    - containerPort: 3000

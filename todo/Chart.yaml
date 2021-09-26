@@ -1,0 +1,6 @@
+apiVersion : v2
+name : todo
+appVersion : "1.0"
+description : "Simple Todo application that stores data in MongoDB"
+version : 0.1.0
+type: application
